@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+  <body> 
+  
+      <header> 
+          <span id="cge">cge</span>.notes
+          <hr solid>
+      </header>
+  
+      <div class="content">
+          
+          <div class="row">
+  
+              <div class="col-12">
+                  <form>
+                      <div class="addNotas">   
+                          <input type="text" id="note" 
+                          name="Escreva sua nota" 
+                          style="width: 1000px; height: 20px;" 
+                          placeholder=" Escreva sua nota..."/>     
+                          <input type="button" 
+                          id="buttonAddNote"
+                          value= "Adicionar nova nota"                        
+                          onclick="addNote();"
+                          />        
+                      </div>
+                 </form>
+  
+              </div>
+  
+          </div>
+      </div>
+  
+      <div class="row">
+  
+          <div class="col-12">
+  
+              <div class="notesBox">
+  
+                  <ol id="itensLista">
+                  </ol>
+  
+              </div>
+  
+      </div>
+  </div>  
+  
+  <span id="conteudo"></span>
+  
+  
+  
+  <script type="text/javascript" src="app.js"></script>
+  
+  
+  <script type="text/javascript">
+  
+      var ol = document.getElementById("itensLista");
+      var li;
+      var item;
+      var itemId;
+  
+      addNote = function() {
+          let item;
+          if (document.getElementById("note").value != "") {
+              item = document.getElementById("note");
+              itemId = ol.childElementCount;
+              li = createNote(item.value,itemId);
+              li.appendChild(createDeleteNoteButton(itemId));
+              ol.appendChild(li)
+              item.value = "";
+              isertNotes(item.value); 
+          }
+  
+      }
+      
+      deleteNote = function(itemId) {
+          for (i = 0; i < ol.children.length; i++) {
+              if(ol.children[i].getAttribute("index")== itemId){
+                  ol.children[i].remove();
+              }
+          }
+      
+      }
+      
+      createNote = function(itemValue, itemId) {
+          let li = document.createElement("li");
+          li.setAttribute("index", itemId);
+          li.appendChild(document.createTextNode(itemValue));
+          return li;
+      }
+      
+      createDeleteNoteButton = function(itemId) {
+          let button = document.createElement("button");
+          button.setAttribute("onclick", "deleteNote("+itemId+")");
+          button.innerHTML = "X";
+          return button;   
+      }
+
+
+      </script>
+    
+  </body>
+  
+  </html>

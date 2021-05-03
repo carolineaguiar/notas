@@ -1,0 +1,70 @@
+html {
+ 
+  height: 100%;
+  background: linear-gradient(to top, #F6F6F6 70%, #00AFB9 30%);
+  margin: auto 80px;
+
+}
+
+header {
+   
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 35px;
+   color:white;   
+}
+
+#cge {
+   color: #80D7DC
+}
+
+.notesBox {
+   margin-top: 60px;
+}
+
+
+li {
+
+   list-style: numeric;
+   margin: 15px 0;
+   height: 20px;  
+   padding: 20px;
+   margin: 20px 0 20px 0;  
+   border: 1px solid black;
+   background-color: white;
+   align-items: center;
+}
+
+button, input[type="button"] {
+   cursor: pointer;
+   width: auto;
+   float: right;
+   border: none;
+   height: auto;
+   bottom: 10px;
+}
+
+#buttonAddNote {
+   height: 40px;
+   background:#FED9B7;
+}
+
+input[type="button"] {
+   
+   background-color: #F6F6F6;
+   text-align: center;
+          
+}
+
+button:hover{
+   background: #E8E8E8;
+}
+
+#buttonAddNote:hover{
+   background: #E8E8E8;
+}
+
+hr{
+   border: thin solid #FFFFFF;
+
+}
+
